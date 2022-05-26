@@ -46,14 +46,15 @@ jobs:
         args: --release
       env:
         CARGO_PROFILE_RELEASE_LTO: true
-        
-    - name: Upload artifacts
-      uses: Roang-zero1/github-upload-release-artifacts-action@master
+
+    - name: Upload artifact and release
+      uses: nanoufo/action-upload-artifacts-and-release-assets@main
       with:
-        args:
-        - target/release/*.so
-        - target/release/*.dll
-        - target/release/*.dylib
+        path: |
+          target/release/*.so
+          target/release/*.dll
+          target/release/*.dylib
+        upload-release-files: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
