@@ -39,7 +39,7 @@ jobs:
     - uses: taiki-e/upload-rust-binary-action@v1.3.0
       with:
         # (required)
-        bin: none
+        bin: example
         # (optional) On which platform to distribute the `.tar.gz` file.
         # [default value: unix]
         # [possible values: all, unix, windows, none]
