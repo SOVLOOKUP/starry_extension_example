@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: taiki-e/create-gh-release-action@v1
+      - name: Create release
+        uses: Roang-zero1/github-create-release-action@master
         env:
-          # (required)
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
   release:
@@ -30,6 +30,7 @@ jobs:
         profile: minimal
         toolchain: stable
     - uses: Swatinem/rust-cache@v1.3.0
+    
     - name: install dependencies (ubuntu only)
       if: matrix.platform == 'ubuntu-latest'
       run: |
@@ -46,7 +47,13 @@ jobs:
       env:
         CARGO_PROFILE_RELEASE_LTO: true
         
-        
-    - uses: actions/upload-artifact@v3
+    - name: Upload artifacts
+      uses: Roang-zero1/github-upload-release-artifacts-action@master
       with:
-        path: target/release/*example\.(so|dll|dylib)
+        args:
+        - target/release/*.so
+        - target/release/*.dll
+        - target/release/*.dylib
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
