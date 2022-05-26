@@ -49,5 +49,7 @@ jobs:
         
     - uses: actions/upload-artifact@v3
       with:
-        path: target/release/
-        name: \.so|\.dll|\.dylib
+        path: |
+          target/release/*.so
+          target/release/*.dll
+          target/release/*.dylib
