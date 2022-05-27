@@ -2222,9 +2222,9 @@ dependencies = [
 
 [[package]]
 name = "starry_extension_interface"
-version = "0.0.2"
+version = "0.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4317e4ef86ae0733be6cd44794f00505e2e972916a42e92087876220f23bed5d"
+checksum = "20eeb4e18a5edfd2a4257c256d9b6709a104945fca8b641030729b435f558e70"
 dependencies = [
  "tauri",
  "tokio",
