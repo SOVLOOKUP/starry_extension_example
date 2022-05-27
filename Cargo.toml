@@ -10,7 +10,8 @@ documentation = "https://github.com/SOVLOOKUP/starry"
 edition = "2021"
 
 [dependencies]
-starry_extension_interface =  "0.0.1" 
+starry_extension_interface =  "0.0.2" 
+chrono = "0.4.19"
 
 [lib]
 name = "example"
