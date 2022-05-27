@@ -47,12 +47,6 @@ jobs:
       env:
         CARGO_PROFILE_RELEASE_LTO: true
 
-    - name: Gets latest created release info
-      id: latest_release_info
-      uses: jossef/action-latest-release-info@v1.2.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Upload artifact and release
       uses: SOVLOOKUP/action-upload-artifacts-and-release-assets@main
       with:
@@ -61,7 +55,5 @@ jobs:
           target/release/*.dll
           target/release/*.dylib
         upload-release-files: true
-        release-upload-url: ${{ steps.latest_release_info.outputs.upload_url }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
