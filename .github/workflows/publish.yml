@@ -37,15 +37,15 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y libgtk-3-dev webkit2gtk-4.0 libappindicator3-dev librsvg2-dev patchelf
     
-#     - name: Build
-#       uses: actions-rs/cargo@v1.0.1
-#       with:
-#         # Cargo command to run (ex. `check` or `build`)
-#         command: build
-#         # Arguments for the cargo command
-#         args: --release
-#       env:
-#         CARGO_PROFILE_RELEASE_LTO: true
+    - name: Build
+      uses: actions-rs/cargo@v1.0.1
+      with:
+        # Cargo command to run (ex. `check` or `build`)
+        command: build
+        # Arguments for the cargo command
+        args: --release
+      env:
+        CARGO_PROFILE_RELEASE_LTO: true
 
     - name: Upload artifact and release
       uses: SOVLOOKUP/action-upload-artifacts-and-release-assets@main
