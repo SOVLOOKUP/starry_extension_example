@@ -48,7 +48,7 @@ jobs:
         CARGO_PROFILE_RELEASE_LTO: true
 
     - name: Upload artifact and release
-      uses: SOVLOOKUP/action-upload-artifacts-and-release-assets@main
+      uses: SOVLOOKUP/action-upload-artifacts-and-release-assets@1.2.0
       with:
         path: |
           target/release/*.so
